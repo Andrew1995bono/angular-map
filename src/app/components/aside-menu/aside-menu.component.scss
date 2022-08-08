@@ -12,6 +12,11 @@
   border-radius: 9px;
 }
 
+h1 {
+  padding: 11px 150px 6px 16px;
+  margin: 0;
+}
+
 input {
   width: 100%;
   background-color: #f2f2f2;
@@ -22,7 +27,6 @@ input {
   padding-left: 16px;
 }
 
-h1 {
-  padding: 11px 150px 6px 16px;
-  margin: 0;
+.gm-svpc {
+  display: none;
 }

@@ -1,7 +1,18 @@
 <agm-map [latitude]="defaultLat"
-         [longitude]="defaultLon">
+         [longitude]="defaultLon"
+         [zoom]="zoom"
+         [disableDefaultUI]="true">
   <agm-marker *ngFor="let marker of actualMapMarkersService.markers"
               [latitude]="marker.latitude"
-              [longitude]="marker.longitude">
+              [longitude]="marker.longitude"
+              iconUrl="./assets/icons/marker-icon.png">
+    <agm-info-window>
+      <strong>
+        lat: {{marker.latitude}}
+        <br>
+        lon: {{marker.longitude}}
+      </strong>
+    </agm-info-window>
   </agm-marker>
+
 </agm-map>

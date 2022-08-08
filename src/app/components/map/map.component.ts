@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActualMapMarkersService} from "../../shared/services/actual-map-markers.service";
+import {MapMarkersService} from "../../shared/services/map-markers.service";
 
 @Component({
   selector: 'app-map',
@@ -8,11 +8,13 @@ import {ActualMapMarkersService} from "../../shared/services/actual-map-markers.
 })
 export class MapComponent implements OnInit {
 
-  public defaultLat = 46.433334;
-  public defaultLon= 6.550000;
+  public defaultLat: number = 27.433334;
+  public defaultLon: number = 6.550000;
+  public zoom: number = 3;
+
 
   constructor(
-    public actualMapMarkersService: ActualMapMarkersService
+    public actualMapMarkersService: MapMarkersService
   ) { }
 
   ngOnInit(): void {

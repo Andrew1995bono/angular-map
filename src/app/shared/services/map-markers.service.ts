@@ -6,7 +6,7 @@ import {SearchFilterPipe} from "../search-filter.pipe";
 @Injectable({
   providedIn: 'root'
 })
-export class ActualMapMarkersService {
+export class MapMarkersService {
 
   public actualListMarkers: MapMarker[] = MarkersList;
 

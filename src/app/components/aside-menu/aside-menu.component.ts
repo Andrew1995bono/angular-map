@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl} from "@angular/forms";
-import {ActualMapMarkersService} from "../../shared/services/actual-map-markers.service";
+import {MapMarkersService} from "../../shared/services/map-markers.service";
 
 @Component({
   selector: 'app-aside-menu',
@@ -16,7 +16,7 @@ export class AsideMenuComponent {
   public inputValue = new FormControl('');
 
   constructor(
-    public actualMapMarkersService: ActualMapMarkersService
+    public actualMapMarkersService: MapMarkersService
   ) { }
 
   public onSelect(value: string): void {
