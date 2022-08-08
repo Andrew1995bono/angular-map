@@ -1,6 +1,6 @@
 <agm-map [latitude]="defaultLat"
          [longitude]="defaultLon">
-  <agm-marker *ngFor="let marker of markers"
+  <agm-marker *ngFor="let marker of actualMapMarkersService.markers"
               [latitude]="marker.latitude"
               [longitude]="marker.longitude">
   </agm-marker>

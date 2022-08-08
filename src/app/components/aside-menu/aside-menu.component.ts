@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {MapMarker} from "../../model/map-marker";
-import {MarkersList} from "../../constant/markers-list";
+import { Component } from '@angular/core';
+import {FormControl} from "@angular/forms";
+import {ActualMapMarkersService} from "../../shared/services/actual-map-markers.service";
 
 @Component({
   selector: 'app-aside-menu',
@@ -10,13 +10,22 @@ import {MarkersList} from "../../constant/markers-list";
 
 export class AsideMenuComponent {
 
-  public listMarkers: MapMarker[] = MarkersList;
   public selectedItem!: string;
+  public resultValue!: string;
 
-  constructor() { }
+  public inputValue = new FormControl('');
+
+  constructor(
+    public actualMapMarkersService: ActualMapMarkersService
+  ) { }
 
   public onSelect(value: string): void {
     this.selectedItem = value;
+  }
+
+  public searchItem(): void {
+    this.resultValue = this.inputValue.value as string;
+    this.actualMapMarkersService.filterMapMarkers(this.resultValue);
   }
 
 }

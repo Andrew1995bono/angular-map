@@ -4,10 +4,13 @@
       <h1>Objects</h1>
     </div>
     <div class="aside-menu-search">
-      <app-search-input></app-search-input>
+      <input type="text"
+             placeholder="Search"
+             [formControl]="inputValue"
+             (input)="searchItem()">
     </div>
     <div class="aside-menu-list-markers"
-         *ngFor="let item of listMarkers">
+         *ngFor="let item of actualMapMarkersService.markers">
       <app-list-markers [selectedItem]="item.name"
                         (clickedItem)="onSelect($event)"
                         [isSelected]="item.name===selectedItem">

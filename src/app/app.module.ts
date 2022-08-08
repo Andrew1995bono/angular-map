@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {AgmCoreModule} from "@agm/core";
 import { MapComponent } from './components/map/map.component';
 import {AsideMenuModule} from "./components/aside-menu/aside-menu.module";
+import { SearchFilterPipe } from './shared/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import {AsideMenuModule} from "./components/aside-menu/aside-menu.module";
       apiKey: 'AIzaSyAjklH_g2KrowTJOr78fMFsdIokyUa4lgM'
     })
   ],
-  providers: [],
+  providers: [SearchFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
