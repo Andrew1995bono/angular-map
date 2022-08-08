@@ -1,0 +1,18 @@
+<div class="main-wrapper">
+  <div class="aside-menu-wrapper">
+    <div class="aside-menu-header">
+      <h1>Objects</h1>
+    </div>
+    <div class="aside-menu-search">
+      <app-search-input></app-search-input>
+    </div>
+    <div class="aside-menu-list-markers"
+         *ngFor="let item of listMarkers">
+      <app-list-markers [selectedItem]="item.name"
+                        (clickedItem)="onSelect($event)"
+                        [isSelected]="item.name===selectedItem">
+      </app-list-markers>
+    </div>
+  </div>
+</div>
+

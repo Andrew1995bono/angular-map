@@ -5,13 +5,13 @@ export const MarkersList: MapMarker[] = [
     "id": 1,
     "latitude": 50.760918,
     "longitude": 4.110170,
-    "name": "ВАЗ"
+    "name": "VAZ"
   },
   {
     "id": 2,
     "latitude": 47.492647,
     "longitude": 19.051399,
-    "name": "ГАЗель"
+    "name": "GAZel"
   },
   {
     "id": 3,
@@ -41,13 +41,13 @@ export const MarkersList: MapMarker[] = [
     "id": 7,
     "latitude": 38.716174,
     "longitude": -9.141589,
-    "name": "Bentli"
+    "name": "Bentley"
   },
   {
     "id": 8,
     "latitude": 50.080293,
     "longitude": 14.428983,
-    "name": "Porche"
+    "name": "Porsche"
   },
   {
     "id": 9,
