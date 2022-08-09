@@ -16,7 +16,7 @@ This is an Angular Google Map application powered by an Angular framework and An
 
 ## Usage
 
-- Clone this repo to your desktop using `git clone` or download files
+- Clone this repo to your desktop using `git clone` or download code files
 - Run `npm install` to install all the dependencies
 
 ## Running application
