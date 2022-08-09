@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {FormControl} from "@angular/forms";
+import {Component} from '@angular/core';
+import {FormControl, Validators} from "@angular/forms";
 import {MapMarkersService} from "../../shared/services/map-markers.service";
 
 @Component({
@@ -12,12 +12,15 @@ export class AsideMenuComponent {
 
   public selectedItem!: string;
   public resultValue!: string;
+  public inputValue = new FormControl('', Validators.pattern('[a-zA-Z]*'));
 
-  public inputValue = new FormControl('');
+  get isError(): boolean {
+    return !!this.inputValue.errors;
+  }
 
   constructor(
     public mapMarkersService: MapMarkersService
-  ) { }
+  ) {}
 
   public onSelect(value: string): void {
     this.selectedItem = value;
@@ -25,7 +28,7 @@ export class AsideMenuComponent {
 
   public searchItem(): void {
     this.resultValue = this.inputValue.value as string;
-    this.mapMarkersService.filterMapMarkers(this.resultValue);
+    this.mapMarkersService.filterExistingMapMarkers(this.resultValue);
   }
 
   public onSelectMapMarkerId(markerId: number): void {

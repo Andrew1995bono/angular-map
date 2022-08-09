@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {AgmCoreModule} from "@agm/core";
+import {AsideMenuModule} from "./components/aside-menu/aside-menu.module";
 
 import { AppComponent } from './app.component';
-import {AgmCoreModule} from "@agm/core";
 import { MapComponent } from './components/map/map.component';
-import {AsideMenuModule} from "./components/aside-menu/aside-menu.module";
-import { SearchFilterPipe } from './shared/pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,10 +15,11 @@ import { SearchFilterPipe } from './shared/pipes/search-filter.pipe';
     BrowserModule,
     AsideMenuModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAjklH_g2KrowTJOr78fMFsdIokyUa4lgM'
+      apiKey: 'AIzaSyAjklH_g2KrowTJOr78fMFsdIokyUa4lgM',
+      language: 'en'
     })
   ],
-  providers: [SearchFilterPipe],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

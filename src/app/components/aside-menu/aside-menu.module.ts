@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {ReactiveFormsModule} from "@angular/forms";
+
 import {AsideMenuComponent} from "./aside-menu.component";
 import { ListMarkersComponent } from './list-markers/list-markers.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {SearchFilterPipe} from "../../shared/pipes/search-filter.pipe";
-
-
 
 @NgModule({
-  declarations: [AsideMenuComponent, ListMarkersComponent, SearchFilterPipe],
+  declarations: [AsideMenuComponent, ListMarkersComponent],
   exports: [
     AsideMenuComponent
   ],
@@ -17,4 +15,5 @@ import {SearchFilterPipe} from "../../shared/pipes/search-filter.pipe";
     ReactiveFormsModule
   ]
 })
+
 export class AsideMenuModule { }

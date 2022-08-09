@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {MapMarker} from "../../model/map-marker";
+import {MapMarker} from "../../models/map-marker";
 import {MarkersList} from "../constants/markers-list";
-import {SearchFilterPipe} from "../pipes/search-filter.pipe";
 import {Subject} from "rxjs";
 
 @Injectable({
@@ -13,16 +12,9 @@ export class MapMarkersService {
   public actualListMarkers: MapMarker[] = MarkersList;
   public selectedMarkerOnMapId: Subject<number> = new Subject<number>();
 
-  get markers() {
-    return this.actualListMarkers;
-  }
-
-  constructor(
-    private searchFilterPipe: SearchFilterPipe
-  ) { }
-
-  public filterMapMarkers(val: string): void {
-    this.actualListMarkers = this.searchFilterPipe.transform(MarkersList, val);
+  public filterExistingMapMarkers(currInputValue: string): MapMarker[] {
+    currInputValue = currInputValue.toLowerCase();
+    return this.actualListMarkers = MarkersList.filter((el: MapMarker) => el.name.toLowerCase().includes(currInputValue));
   }
 
 }

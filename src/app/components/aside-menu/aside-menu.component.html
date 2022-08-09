@@ -4,14 +4,20 @@
       <h1>Objects</h1>
     </div>
     <div class="aside-menu-search">
-      <input type="text"
+      <input [class.inputError]="isError"
+             type="text"
              placeholder="Search"
              autofocus
+             pattern="[a-zA-Z]*"
              [formControl]="inputValue"
              (input)="searchItem()">
+      <div class="error-hint"
+           *ngIf="isError">
+        <p>* Please enter only letters</p>
+      </div>
     </div>
     <div class="aside-menu-list-markers"
-         *ngFor="let item of mapMarkersService.markers"
+         *ngFor="let item of mapMarkersService.actualListMarkers"
          (click)="onSelectMapMarkerId(item.id)">
       <app-list-markers [selectedListItem]="item.name"
                         (clickedListItem)="onSelect($event)"

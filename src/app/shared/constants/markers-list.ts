@@ -1,4 +1,4 @@
-import {MapMarker} from "../../model/map-marker";
+import {MapMarker} from "../../models/map-marker";
 
 export const MarkersList: MapMarker[] = [
   {

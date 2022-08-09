@@ -1,21 +1,19 @@
-<agm-map [latitude]="defaultLat"
-         [longitude]="defaultLon"
-         [zoom]="zoom"
-         [disableDefaultUI]="true">
-
-  <agm-marker *ngFor="let marker of mapMarkersService.markers"
-              [latitude]="marker.latitude"
-              [longitude]="marker.longitude"
-              iconUrl="{{marker.id === selectedMarkerId? './assets/icons/marker-icon-selected.png' : './assets/icons/marker-icon.png'}}">
-
-    <agm-info-window>
-      <strong>
-        lat: {{marker.latitude}}
-        <br>
-        lon: {{marker.longitude}}
-      </strong>
-    </agm-info-window>
-
-  </agm-marker>
-
-</agm-map>
+<div class="map-container">
+  <agm-map [latitude]="defaultLat"
+           [longitude]="defaultLon"
+           [zoom]="zoom"
+           [disableDefaultUI]="true">
+    <agm-marker *ngFor="let marker of mapMarkersService.actualListMarkers"
+                [latitude]="marker.latitude"
+                [longitude]="marker.longitude"
+                iconUrl="{{marker.id === selectedMarkerId? './assets/icons/marker-icon-selected.png' : './assets/icons/marker-icon.png'}}">
+      <agm-info-window>
+        <strong>
+          lat: {{marker.latitude}}
+          <br>
+          lon: {{marker.longitude}}
+        </strong>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>
