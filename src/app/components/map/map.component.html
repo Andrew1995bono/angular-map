@@ -2,10 +2,12 @@
          [longitude]="defaultLon"
          [zoom]="zoom"
          [disableDefaultUI]="true">
-  <agm-marker *ngFor="let marker of actualMapMarkersService.markers"
+
+  <agm-marker *ngFor="let marker of mapMarkersService.markers"
               [latitude]="marker.latitude"
               [longitude]="marker.longitude"
-              iconUrl="./assets/icons/marker-icon.png">
+              iconUrl="{{marker.id === selectedMarkerId? './assets/icons/marker-icon-selected.png' : './assets/icons/marker-icon.png'}}">
+
     <agm-info-window>
       <strong>
         lat: {{marker.latitude}}
@@ -13,6 +15,7 @@
         lon: {{marker.longitude}}
       </strong>
     </agm-info-window>
+
   </agm-marker>
 
 </agm-map>

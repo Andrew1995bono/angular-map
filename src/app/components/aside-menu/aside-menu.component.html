@@ -11,9 +11,10 @@
              (input)="searchItem()">
     </div>
     <div class="aside-menu-list-markers"
-         *ngFor="let item of actualMapMarkersService.markers">
-      <app-list-markers [selectedItem]="item.name"
-                        (clickedItem)="onSelect($event)"
+         *ngFor="let item of mapMarkersService.markers"
+         (click)="onSelectMapMarkerId(item.id)">
+      <app-list-markers [selectedListItem]="item.name"
+                        (clickedListItem)="onSelect($event)"
                         [isSelected]="item.name===selectedItem">
       </app-list-markers>
     </div>

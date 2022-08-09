@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {MapMarker} from "../model/map-marker";
+import {MapMarker} from "../../model/map-marker";
 
 @Pipe({
   name: 'searchFilter'

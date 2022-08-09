@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {AsideMenuComponent} from "./aside-menu.component";
 import { ListMarkersComponent } from './list-markers/list-markers.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {SearchFilterPipe} from "../../shared/search-filter.pipe";
+import {SearchFilterPipe} from "../../shared/pipes/search-filter.pipe";
 
 
 

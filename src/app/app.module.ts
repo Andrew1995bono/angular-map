@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {AgmCoreModule} from "@agm/core";
 import { MapComponent } from './components/map/map.component';
 import {AsideMenuModule} from "./components/aside-menu/aside-menu.module";
-import { SearchFilterPipe } from './shared/search-filter.pipe';
+import { SearchFilterPipe } from './shared/pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [

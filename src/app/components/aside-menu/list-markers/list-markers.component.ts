@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {MapMarkersService} from "../../../shared/services/map-markers.service";
 
 @Component({
   selector: 'app-list-markers',
@@ -8,15 +9,15 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 export class ListMarkersComponent {
 
-  @Input() selectedItem!: string;
+  @Input() selectedListItem!: string;
   @Input() isSelected: boolean = false;
 
-  @Output() clickedItem: EventEmitter<string> = new EventEmitter<string>();
+  @Output() clickedListItem: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   public onSelect(): void {
-    this.clickedItem.emit(this.selectedItem);
+    this.clickedListItem.emit(this.selectedListItem);
   }
 
 }

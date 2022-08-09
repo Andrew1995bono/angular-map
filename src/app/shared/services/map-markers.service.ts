@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import {MapMarker} from "../../model/map-marker";
-import {MarkersList} from "../../constant/markers-list";
-import {SearchFilterPipe} from "../search-filter.pipe";
+import {MarkersList} from "../constants/markers-list";
+import {SearchFilterPipe} from "../pipes/search-filter.pipe";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class MapMarkersService {
 
   public actualListMarkers: MapMarker[] = MarkersList;
+  public selectedMarkerOnMapId: Subject<number> = new Subject<number>();
 
   get markers() {
     return this.actualListMarkers;

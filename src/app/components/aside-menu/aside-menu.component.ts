@@ -16,7 +16,7 @@ export class AsideMenuComponent {
   public inputValue = new FormControl('');
 
   constructor(
-    public actualMapMarkersService: MapMarkersService
+    public mapMarkersService: MapMarkersService
   ) { }
 
   public onSelect(value: string): void {
@@ -25,7 +25,11 @@ export class AsideMenuComponent {
 
   public searchItem(): void {
     this.resultValue = this.inputValue.value as string;
-    this.actualMapMarkersService.filterMapMarkers(this.resultValue);
+    this.mapMarkersService.filterMapMarkers(this.resultValue);
+  }
+
+  public onSelectMapMarkerId(markerId: number): void {
+    this.mapMarkersService.selectedMarkerOnMapId.next(markerId);
   }
 
 }
